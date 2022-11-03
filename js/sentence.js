@@ -31,10 +31,19 @@
 // console.log(firstElement);
 
 
-const fruits = ["apple", "peach", "pear", "banana"];
+// const fruits = ["apple", "peach", "pear", "banana"];
 
 // Change code below this line
-const lastElementIndex = fruits.length - 1;
-const lastElement = fruits[lastElementIndex];
+// const lastElementIndex = fruits.length - 1;
+// const lastElement = fruits[lastElementIndex];
 
-console.log(lastElement);
+// console.log(lastElement);
+
+
+function getExtremeElements(array) {
+  
+  return [array[0],array[(array.length) -1]]
+
+}
+
+console.log(getExtremeElements([1, 2, 3, 4, 5, 6]));
