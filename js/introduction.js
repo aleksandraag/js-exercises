@@ -4,7 +4,7 @@ const name = "Ola";
 const age3 = 25;
 const favFood = "pizza, pasta";
 console.log(name);
-console.log(age);
+console.log(age3);
 console.log(favFood);
 
 console.log("Hej, jestem " + name + " lubię " + favFood);
@@ -34,6 +34,7 @@ currentCar = 'Audi'
 let firstName2 = 'Ania'
 let age2 = 24
 let favColor2 = "czerwony";
+console.log(favColor);
 
 
 
