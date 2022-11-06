@@ -67,9 +67,75 @@ console.log(xx);
 xx %= yy;
 console.log(xx);
 
+// comparison operators == porównuje zawartość, === porównuje typ, zawssze używać === bo dokładniejsze
 
-// comparison operators
+console.log(10 == "10");
+console.log(10 === "10");
+console.log("10" === "10");
 
+console.log(10 != "10");
+console.log(10 !== "10");
+console.log(10 !== 10);
 
+// przy znakach mniejszości i większości nie ma ! czyli np nie można !<
 
+console.log(10 > 5);
+console.log(10 < 5);
+console.log(10 >= 10);
+console.log(10 <= 10);
 
+//logical operators  && = and  || = or  ! = negation
+
+if (true) {
+  console.log("👍");
+} else {
+  console.log("👇");
+}
+
+if (true && false) {
+  console.log("👍");
+} else {
+  console.log("👇");
+}
+
+if (false || true) {
+  console.log("👍");
+} else {
+  console.log("👇");
+}
+
+if (false && false) {
+  console.log("👍");
+} else {
+  console.log("👇");
+}
+
+if (10 - 10) {
+  console.log("👍");
+} else {
+  console.log("👇");
+}
+
+//chyba ze zaprzeczymy ! , 10 - 10 bo 0 to też false
+if (!(false && false)) {
+  console.log("👍");
+} else {
+  console.log("👇");
+}
+
+if (!(10 - 10)) {
+  console.log("👍");
+} else {
+  console.log("👇");
+}
+
+if (10 === "10") {
+  console.log("👍");
+} else {
+  console.log("👇");
+}
+if (!(10 === "10")) {
+  console.log("👍");
+} else {
+  console.log("👇");
+}
