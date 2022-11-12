@@ -11,6 +11,7 @@ console.log("Hej, jestem " + name + " lubię " + favFood);
 
 console.log(`Hej, jestem ${name}`);
 
+// Trzeba uzywac back-ticks do ${}!! ` ` 
 
 const myName = 'Ola';
 const petName = 'Bobo';
