@@ -108,10 +108,213 @@ const Numbers = [1, 2, 3, 4, 5, 6];
 //   console.log(`${Number} - index ${i}`, arr);
 // });
 
-
 //albo
 
 const forEachFn = (Number, i, arr) => {
   console.log(`${Number} - index ${i}`, arr);
 };
 Numbers.forEach(forEachFn);
+
+console.log("---------");
+
+//Reference primitive
+//odnosi się do typów prymitywnych (liczby, nan, stringi)
+let a = 5;
+let b = 10;
+
+a = b; // a = 10 wartość sklonowana z "pudełka" wyżej
+b = 15;
+console.log(a, b);
+
+console.log("---------");
+
+//Reference non primitive (e.g arrays, funtions, objects)
+
+const x = ["Adam"];
+const y = x; // bo tu nie jest jak wyżej że y = ['Adam'], w tym przypadku y jest x, w sensie y to inna nazwa na x, to nie jest prymitywne klonowanie tylko y staje się x
+const z = y;
+console.log(y);
+y.push("Wkładam");
+console.log(y);
+console.log(x);
+console.log(z);
+
+console.log("--------");
+
+//Array methods (metody tablicowe)
+//string method split & join
+
+const name = "Zuzia";
+console.log(name.split(""));
+
+const nameSurname = "Zuzia Grażyna Strzyżewska";
+console.log(nameSurname.split(" "));
+console.log(nameSurname);
+const splitName = nameSurname.split(" ");
+console.log(splitName);
+//join robi odwrotnosc splita
+console.log(splitName.join(" - "));
+
+console.log("-------");
+
+//array method index of
+
+const names = ["Emma", "Cleo", "Rikki", "Charlotte"];
+console.log(names.indexOf("Cleo"));
+console.log(names.indexOf("Louise"));
+
+console.log("-----");
+
+//array method includes
+
+const clientss = ["Will", "Irma", "Cornelia"];
+console.log(clientss.includes("Caleb"));
+console.log(clientss.includes("Cornelia"));
+
+console.log("-------");
+
+//array method push & pop & shift & unshift
+const ns = [1, 2, 3, 4];
+ns.push(5, 6);
+console.log(ns);
+ns.pop(); //usuwa OSTATNI elemnt tablicy
+console.log(ns);
+
+ns.unshift(0);
+console.log(ns);
+ns.shift(); //usuwa PIERWSZY element z tablicy
+console.log(ns);
+
+console.log("-------");
+
+//array method slice
+const nms = [1, 2, 3, 4];
+console.log(nms.slice(0, 2)); //czyli wycina nam fragment array od indeksu 0 do indeksu 2 (z wyłączeniem tego ostatniego czyli w praktyce do indeksu 1 włącznie)
+console.log(nms);
+//WAŻNE! slice nie modyfikuje nam array, tylko wyciąga fragment
+console.log(nms.slice(2));
+console.log(nms.slice(-1));
+
+console.log("-------");
+
+//array method splice, można odejmować i dodawać
+//odejmowanie (odklejanie)
+const nr = [1, 2, 3, 4, 5];
+// let deleted = nr.splice(0, 3) // a to już modyfikuje tablice, s.efekt końcowy (od indeksu 0 do 3 wyłącznie (czyli 2 włącznie czyli [1,2,3] więc zostaje nam tylko [4,5])) // deletes first 3 elements <0,3) (not inclusive więc przedział otwarty)
+let deleted2 = nr.splice(-2); // deletes last 2 elements
+// console.log(deleted, nr);
+console.log(deleted2, nr);
+
+const nu = [1, 2, 3, 4, 5];
+//dodawanie (doklejanie), trzeba dopisać trzeci element po przecinku, wtedy program rozumie ze to ma zostac dodane
+nu.splice(2, 0, "eloelo", "siema"); //2 - na której pozycji/indeksie dodać, 0 - ile elementów chcemy podmienić, 'eloelo' - wartość nowego elementu // add new element at index2
+console.log(nu);
+
+//a teraz nie tylko dodajemy ale też zamieniamy
+const nbr = [1, 2, 3, 4, 5];
+nbr.splice(2, 1, "jestem nowa"); // change 1
+// nbr.splice(2, 1, "jestem nowa", 'ja też'); //change 1, add another
+// nbr.splice(2,2,'elo', 'siema') // change 2
+// nbr.splice(2,2,'elo') // change 1, delete another
+console.log(nbr);
+
+console.log("------");
+
+//concat
+
+const ns1 = [1, 2, 3, 4, 5];
+const ns2 = [6, 7, 8, 9];
+const ns3 = ns1.concat(ns2);
+console.log(ns3);
+//alternatywa: spread
+const ns4 = [...ns1, ...ns2];
+console.log(ns4);
+
+console.log("------");
+
+//array method find findIndex
+
+const friends = [
+  {
+    name: "Joe",
+    surname: "Tribbiani",
+  },
+  {
+    name: "Rachel",
+    surname: "Green",
+  },
+  {
+    name: "Effy",
+    surname: "Stonem",
+  },
+];
+
+// const g = friends.indexOf({
+//   name: "Rachel",
+//   surname: "Green"
+// });
+// console.log(g);
+//wychodzi -1 bo js nie może porównywać obiektów
+
+// const foundEl = friends.find(
+//   (el) => el.name === "Rachel" && el.surname === "Green"
+// );
+// console.log(foundEl);
+
+//drugi sposób zapisania kodu
+const foundEl = friends.find((el) => {
+  console.log(el.name);
+  return el.name === "Rachel" && el.surname === "Green";
+});
+console.log(foundEl);
+
+foundEl.name = "John"; //jak widać tu też zmiana wpływa na pierwotny element, jak to w przypadku NONPRIMITIVE, j.w.
+console.log(foundEl);
+console.log(friends);
+
+//znajdź index
+
+const foundIndex = friends.findIndex((el) => el.surname === "Green");
+console.log(foundIndex);
+
+console.log("------");
+
+//array method filter
+
+const enemies = [
+  {
+    name: "Dawid",
+    surname: "Gurgul",
+  },
+  {
+    name: "Weronika",
+    surname: "Gurgul",
+  },
+  {
+    name: "Agata",
+    surname: "Wolak",
+  },
+  {
+    name: "Dupa",
+    surname: "Gurgul",
+  },
+];
+
+console.log(enemies.filter((el) => el.surname === "Gurgul"));
+console.log(enemies);
+//filter tylko filtruje, nie modyfikuje tablicy
+
+console.log("-------");
+
+//array method map
+
+const myFriends = [
+  {
+    name: "Ola",
+    surname: "Stec",
+  },
+  {
+    name: "Ola",
+    surname: "Stec",
+  },
+];
