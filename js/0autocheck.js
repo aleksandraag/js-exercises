@@ -314,7 +314,43 @@ const myFriends = [
     surname: "Stec",
   },
   {
-    name: "Ola",
+    name: "Asia",
+    surname: "Wójcik",
+  },
+  {
+    name: "Gabrysia",
     surname: "Stec",
   },
+  {
+    name: "Kasia",
+    surname: "Stec",
+  },
+  {
+    name: "Laura",
+    surname: "Srogosz",
+  }
 ];
+const f = myFriends.map(el => {
+  if(el.surname === "Stec"){
+    el.surname = "Blue";
+  }
+  return el;
+})
+console.log(f);
+
+
+
+
+console.log('______________');
+
+function findLongestWord(string) {
+  
+  let newFindLongestWord = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    newFindLongestWord = findLongestWord.split(" ");
+  }
+
+}
+
+findLongestWord("Google do a roll");
