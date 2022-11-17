@@ -340,17 +340,34 @@ console.log(f);
 
 
 
+console.log('-------');
 
-console.log('______________');
+// array method reduce
 
-function findLongestWord(string) {
-  
-  let newFindLongestWord = 0;
+const nrs1 = [0, 1, 2, 3, 4, 5]
+const sumOfN = nrs1.reduce(
+  (acc, el) => {
+    console.log(`acc => ${acc} ; el => ${el} ; acc + el => ${acc + el}`);
+    acc += el;
+    return acc;
+  },  //function
+  0   //accumulator
+)
+console.log(`reduced: ${sumOfN}`);
 
-  for (let i = 0; i < string.length; i++) {
-    newFindLongestWord = findLongestWord.split(" ");
+//to samo tylko zapisane normalnie, krotko
+const nrs2 = [0, 1, 2, 3, 4, 5]
+const sumOfN2 = nrs2.reduce((acc, el) => acc + el, 0)
+//0 musi być bo to pierwszy element akumulatora, gdyby tam dać coś innego (np 1 czy 'a' to by nam popsuło wynik)
+
+console.log('--------');
+
+function filterArray(numbers, value) {
+
+  let newArray = [];
+  for (let i = numbers; i < value; i++) {
+    newArray.push(i);
   }
-
+  return newArray;
 }
-
-findLongestWord("Google do a roll");
+console.log("filterArray([1, 2, 3, 4, 5], 3)");

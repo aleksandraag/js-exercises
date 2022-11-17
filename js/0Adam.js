@@ -39,11 +39,18 @@ console.log(y);
 // } while (pass.length < 5);
 // console.log(`your password is: ${pass}`);
 
-console.log('-------');
+console.log("-------");
 
 //for loop
-for (let i = 0; i <= 10; i++){
-for (let j = 0; j <= 2; j++){
-  console.log(`${i}-${j}`);
+for (let i = 0; i <= 10; i++) {
+  for (let j = 0; j <= 2; j++) {
+    console.log(`${i}-${j}`);
+  }
 }
+
+//drugi sposob (j vs ii)
+for (let i = 0; i <= 10; i++) {
+  for (let ii = 3; ii <= 5; ii++) {
+    console.log(`${i}-${ii}`);
+  }
 }
