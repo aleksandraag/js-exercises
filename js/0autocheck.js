@@ -371,3 +371,32 @@ function filterArray(numbers, value) {
   return newArray;
 }
 console.log("filterArray([1, 2, 3, 4, 5], 3)");
+
+
+
+const modulo = 12 % 8;
+console.log(modulo);
+
+
+function absolute(x) {
+  if (x >= 0) {
+    return x;
+  } else {
+    return -x;
+  }
+}
+console.log(absolute(-2));
+
+console.log('-------');
+
+const start = 6;
+const end = 27;
+let number;
+
+for (let i = start; i < end; i += 1) {
+  if (i % 5 === 0) {
+    number = i;
+    break;
+  }
+}
+console.log(number);
