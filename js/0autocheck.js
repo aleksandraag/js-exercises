@@ -400,3 +400,53 @@ for (let i = start; i < end; i += 1) {
   }
 }
 console.log(number);
+
+
+const age = 20;
+console.log(typeof age);
+const isLoggedIn = true;
+console.log(typeof isLoggedIn);
+const namee = 'Ola'
+console.log(typeof namee);
+
+const userName = 'Mango';
+console.log("My user name is", userName);
+
+// const isComing = confirm("Please confirm hotel reservation");
+// console.log(isComing);
+
+// const value = prompt("Please enter a number!")
+// console.log(typeof value);
+// console.log(value);
+
+const valueA = "5"
+console.log(typeof valueA);
+console.log(Number(valueA));
+console.log(typeof Number(valueA));
+
+console.log(Number.parseInt("hdf89f")); //wyciaga sama liczbe ze stringa ale musi sie zaczynac od liczby, inaczej wyskoczy NaN
+console.log(Number.parseInt("813hdrg09"));
+console.log(Number.parseInt("81.3hdrg09")); // tu dziesiętnch po przecinku nie pokazuje
+
+console.log(Number.parseFloat("12.5sgvsg")); //to samo tylko dla liczb dziesiętnych
+console.log(Number.parseFloat("asf13.14"));
+
+const validNumber = Number("51")
+console.log(Number.isNaN(validNumber));
+const invalidNumber = Number("dupa");
+console.log(Number.isNaN(invalidNumber));
+
+console.log(0.14 + 0.17);
+console.log((0.14 * 100 + 0.17 * 100) / 100);
+console.log((0.14 + 0.17).toFixed(2));
+
+console.log(Math.floor(1.6));
+console.log(Math.floor(1.9)); //floor zwraca niższą najbliższą wartość 1.9 przechyla sie w stronę 1 bo wciąż mniej niż 2
+console.log(Math.ceil(1.2)); //ceil zwraca najwyższą najbliższą wartość 1.2 przechyla się w stronę 2 bo to już więcej niż 1
+console.log(Math.round(7.2)); //zaokrąglenie czyli do 5 idzie do niższej liczby a od 5 do wyższej
+console.log(Math.round(7.5));
+console.log(Math.round(7.8));
+console.log(Math.max(8, 10, 20, 2, 45)); // zwraca największą liczbę ze zbioru
+console.log(Math.pow(5, 2)); //potęga, w tym wypadku 5 do potęgi 2 (liczba, potęga)
+console.log(Math.random()); //randomowa liczba od 0 do 1
+console.log(Math.random() * (10 - 1) + 1); //pseudorandomowa liczba od 1 do 10
